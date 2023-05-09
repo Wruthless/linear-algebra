@@ -1,16 +1,17 @@
-# This is a sample Python script.
+import numpy as np
 
-# Press Ctrl+R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+# The Transformation matrix.
+# First row is subtracted from the second row to ensure rows are perpendicular.
+T = np.array([[np.sqrt(2), -np.sqrt(2)], [np.sqrt(2), np.sqrt(2)]])
 
+# A vector for the transformation matrix.
+v = np.array([1, 1])
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Cmd+F8 to toggle the breakpoint.
+# Applying the transformation.
+# dot() performs matrix multiplication between the matrix T, and the vector v
+# This applies the transformation to the vector.
+Tv = T.dot(v)
 
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+# Printing the original vector and the transformed matrix.
+print("Original vector: ", v)
+print("Transformed vector: ", Tv)
